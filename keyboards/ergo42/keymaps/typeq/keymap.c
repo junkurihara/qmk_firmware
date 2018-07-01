@@ -26,9 +26,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `------------------------------------------------'   `------------------------------------------------'
    */
   [BASE] = LAYOUT( \
-    KC_ESC,   KC_GRV,   KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,   KC_Y,    KC_U,     KC_I,    KC_O,    KC_P,    KC_MINS, KC_EQL, \
-    KC_TAB,   KC_LCTL,  KC_A,    KC_S,    KC_D,     KC_F,     KC_G,   KC_H,    KC_J,     KC_K,    KC_L,    KC_SCLN, KC_QUOT, KC_ENT, \
-    MO(SYMB), KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,     KC_B,   KC_N,    KC_M,     KC_COMM, KC_DOT,  KC_SLSH, KC_BSLS, MO(CURS), \
+    KC_ESC,   KC_GRV,   KC_Q,    KC_W,    KC_E,     KC_R,     KC_T,   KC_Y,    KC_U,     KC_I,     KC_O,    KC_P,    KC_MINS, KC_EQL, \
+    KC_TAB,   KC_LCTL,  KC_A,    KC_S,    KC_D,     KC_F,     KC_G,   KC_H,    KC_J,     KC_K,     KC_L,    KC_SCLN, KC_QUOT, KC_ENT, \
+    MO(SYMB), KC_LSFT,  KC_Z,    KC_X,    KC_C,     KC_V,     KC_B,   KC_N,    KC_M,     KC_COMM,  KC_DOT,  KC_SLSH, KC_BSLS, MO(CURS), \
     S(KC_9),  S(KC_0),  KC_LALT, KC_LGUI, MO(CURS), MO(META), KC_SPC, KC_BSPC, MO(META), MO(SYMB), KC_RGUI, KC_RALT, KC_LBRC, KC_RBRC \
   ),
 
@@ -91,20 +91,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* CURS
    * ,------------------------------------------------.   ,------------------------------------------------.
-   * | Esc  |   !  |   @  |   #  |   $  |   %  |  [   |   |  ]   |   ^  |   &  |   *  |  Up  |      |  =   |
+   * | Esc  |   !  |   @  |   #  |   $  |   %  |  [   |   |  ]   |   ^  |   &  |   *  |      |  Up  |  =   |
    * |------+------+------+------+------+------+------|   |-------------+------+------+------+------+------|
-   * | LCtrl|      |      |      |      |      |  (   |   |  )   | Home | PgUp | Left | Down | Right| Enter|
+   * | LCtrl|      |      |      |      |      |  (   |   |  )   |      | Home | PgUp | Left | Right| Enter|
    * |------+------+------+------+------+------+------|   |------|------+------+------+------+------+------|
-   * | SYMB |      |      |      |      |      |  {   |   |  }   |  End | PgDwn|      |      |      | CURS |
+   * | SYMB |      |      |      |      |      |  {   |   |  }   |      |  End | PgDwn| Down |      | CURS |
    * |------+------+------+------+------+------+------|   |------+------+------+------+------+------+------|
    * |  (   |  )   | LAlt | LGUI | CURS | META |Space |   | Bksp | META | SYMB | RGUI | RAlt |  [   |  ]   |
    * |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
    * `------------------------------------------------'   `------------------------------------------------'
    */
   [CURS] = LAYOUT( \
-    _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LBRC,    KC_RBRC,    S(KC_6), S(KC_7),   S(KC_8), KC_UP,   XXXXXXX, _______, \
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_9),    S(KC_0),    KC_HOME, KC_PGUP,   KC_LEFT, KC_DOWN, KC_RGHT, _______, \
-    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_LBRC), S(KC_RBRC), KC_END,  KC_PGDOWN, XXXXXXX, XXXXXXX, XXXXXXX, _______, \
+    _______, S(KC_1), S(KC_2), S(KC_3), S(KC_4), S(KC_5), KC_LBRC,    KC_RBRC,    S(KC_6), S(KC_7), S(KC_8),   XXXXXXX, KC_UP,   _______, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_9),    S(KC_0),    XXXXXXX, KC_HOME, KC_PGUP,   KC_LEFT, KC_RGHT, _______, \
+    _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, S(KC_LBRC), S(KC_RBRC), XXXXXXX, KC_END,  KC_PGDOWN, KC_DOWN, XXXXXXX, _______, \
     _______, _______, _______, _______, _______, _______, _______,    _______,    _______, _______,   _______, _______, _______, _______ \
   )
 
