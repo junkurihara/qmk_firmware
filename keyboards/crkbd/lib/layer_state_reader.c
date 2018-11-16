@@ -6,6 +6,7 @@
 #define L_BASE 0
 #define L_LOWER 8
 #define L_RAISE 16
+#define L_CURS 256
 #define L_ADJUST 65536
 #define L_ADJUST_TRI 65560
 
@@ -22,6 +23,9 @@ const char *read_layer_state(void) {
     break;
   case L_LOWER:
     snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Lower");
+    break;
+  case L_CURS:
+    snprintf(layer_state_str, sizeof(layer_state_str), "Layer: Cursor");
     break;
   case L_ADJUST:
   case L_ADJUST_TRI:
