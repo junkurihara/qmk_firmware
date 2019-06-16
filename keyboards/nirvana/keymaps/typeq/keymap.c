@@ -52,16 +52,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { \
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
    * |Tb/Ctl|   A  |   S  |   D  |   F  |   G  |             |   H  |   J  |   K  |   L  |   ;  | Enter|
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * | Shift|   Z  |   X  |   C  |   V  |   B  |             |   N  |   M  |   ,  |   .  |   /  | CURS |
+   * | Shift|   Z  |   X  |   C  |   V  |   B  |             |   N  |   M  |   ,  |   .  |   /  |ADJUST|
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * |  `   |ADJUST| Win  | LAlt |LOWER |Space |             | RAISE| LOWER|   \  | RGUI | RALT |   '  |
+   * |  `   |ADJUST| Win  | LAlt |LOWER |Space |             | LOWER| RAISE|   \  | RGUI | RALT |   '  |
    * `-----------------------------------------'             `-----------------------------------------'
    */
 [_TYPEQ] = LAYOUT_ortho_4x12(
       KC_ESC,         KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                      KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC, \
       LCTL_T(KC_TAB), KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                      KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_ENT, \
-      KC_LSFT,        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT, \
-      KC_GRV,         ADJUST,  KC_LGUI, KC_LALT, LOWER,   KC_SPC,                    RAISE,   LOWER,   KC_BSLS, KC_RGUI, KC_RALT, KC_QUOT \
+      KC_LSFT,        KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, ADJUST, \
+      KC_GRV,         ADJUST,  KC_LGUI, KC_LALT, LOWER,   KC_SPC,                    LOWER,   RAISE,   KC_BSLS, KC_RGUI, KC_RALT, KC_QUOT \
       ),
 
   /* Qwerty
@@ -156,20 +156,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = { \
 
   /* Adjust (Lower + Raise)
    * ,-----------------------------------------.             ,-----------------------------------------.
-   * |      | Reset|RGBRST|Aud on|Audoff|      |             |Typeq |Qwerty|Colemk|Dvorak|Print | Ins  |
+   * |      | Reset|RGBRST|Aud on|Audoff|      |             |      |      | PSCR | SLCK |  UP  | Ins  |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * |      |RGB ON| HUE+ | SAT+ | VAL+ |      |             |      |  -   |   =  |Print |ScLock|Pause |
+   * |      |RGB ON| HUE+ | SAT+ | VAL+ |      |             |      | Home | PgUp | LEFT |RIGHT |Pause |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * |      | MODE | HUE- | SAT- | VAL- |      |             |      |      |      |      |      |      |
+   * |      | MODE | HUE- | SAT- | VAL- |      |             |      | End  | PgDn | DOWN |      |      |
    * |------+------+------+------+------+------|             |------+------+------+------+------+------|
-   * |      |      |      |      | EISU | EISU |             | KANA | KANA | Home |PageDn|PageUp| End  |
+   * |      |      |      |      |      |      |             |      |      |      |      |      |      |
    * `-----------------------------------------'             `-----------------------------------------'
    */
     [_ADJUST] =  LAYOUT_ortho_4x12( \
-      _______, RESET,   RGBRST,  _______, _______, _______,                   TYPEQ,   QWERTY,  COLEMAK, DVORAK,  KC_PSCR, KC_INS, \
-      _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, _______,                   _______, KC_MINS, KC_EQL,  KC_PSCR, KC_SLCK, KC_PAUS,\
-      _______, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, _______,                   _______, _______, _______, _______, _______, _______,\
-      _______, _______, _______, _______,    EISU,    EISU,                      KANA,    KANA,    KC_HOME, KC_PGDN, KC_PGUP, KC_END\
+      _______, RESET,   RGBRST,  _______, _______, _______,                   _______, _______, KC_PSCR, KC_SLCK, KC_UP,    KC_INS, \
+      _______, RGB_TOG, RGB_HUI, RGB_SAI, RGB_VAI, _______,                   _______, KC_HOME, KC_PGUP, KC_LEFT, KC_RIGHT, KC_PAUS,\
+      _______, RGB_MOD, RGB_HUD, RGB_SAD, RGB_VAD, _______,                   _______, KC_END,  KC_PGDN, _______, KC_DOWN,  _______,\
+      _______, _______, _______, _______, _______, _______,                   _______, _______, _______, _______,  _______,  _______\
       )
 };
 
