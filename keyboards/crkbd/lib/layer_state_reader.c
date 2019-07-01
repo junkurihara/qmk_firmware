@@ -5,18 +5,11 @@
 
 // in the future, should use (1U<<_LAYER_NAME) instead, but needs to be moved to keymap,c
 #define L_BASE 0
-<<<<<<< HEAD
 #define L_LOWER 8
 #define L_RAISE 16
 #define L_CURS 256
 #define L_ADJUST 65536
 #define L_ADJUST_TRI 65560
-=======
-#define L_LOWER 2
-#define L_RAISE 4
-#define L_ADJUST 8
-#define L_ADJUST_TRI 14
->>>>>>> upstream/master
 
 char layer_state_str[24];
 
