@@ -22,10 +22,10 @@ extern uint8_t is_master;
 // Layer names don't all need to be of the same length, obviously, and you can also skip them
 // entirely and just use numbers.
 #define _QWERTY 0
-#define _LOWER 3
-#define _RAISE 4
+#define _LOWER 1
+#define _RAISE 2
 #define _CURS  8
-#define _ADJUST 16
+#define _ADJUST 3
 
 enum custom_keycodes {
   QWERTY = SAFE_RANGE,
@@ -55,7 +55,7 @@ enum macro_keycodes {
 #define KC_LSAD  RGB_SAD
 #define KC_LVAI  RGB_VAI
 #define KC_LVAD  RGB_VAD
-#define KC_LMOD RGB_MOD
+#define KC_LMOD  RGB_MOD
 #define KC_CTLTB CTL_T(KC_TAB)
 //#define KC_GUIEI GUI_T(KC_LANG2)
 //#define KC_ALTKN ALT_T(KC_LANG1)
@@ -157,11 +157,12 @@ const char *read_layer_state(void);
 const char *read_logo(void);
 void set_keylog(uint16_t keycode, keyrecord_t *record);
 const char *read_keylog(void);
-// const char *read_keylogs(void);
+const char *read_keylogs(void);
+
 // const char *read_mode_icon(bool swap);
-const char *read_host_led_state(void);
-//void set_timelog(void);
-//const char *read_timelog(void);
+// const char *read_host_led_state(void);
+// void set_timelog(void);
+// const char *read_timelog(void);
 
 void matrix_scan_user(void) {
    iota_gfx_task();
@@ -171,11 +172,11 @@ void matrix_render_user(struct CharacterMatrix *matrix) {
   if (is_master) {
     // If you want to change the display of OLED, you need to change here
     matrix_write_ln(matrix, read_layer_state());
-    matrix_write_ln(matrix, read_host_led_state());
     matrix_write_ln(matrix, read_keylog());
-    //matrix_write_ln(matrix, read_timelog());
-    //matrix_write_ln(matrix, read_keylogs());
+    matrix_write_ln(matrix, read_keylogs());
     //matrix_write_ln(matrix, read_mode_icon(keymap_config.swap_lalt_lgui));
+    //matrix_write_ln(matrix, read_host_led_state());
+    //matrix_write_ln(matrix, read_timelog());
   } else {
     matrix_write(matrix, read_logo());
   }
@@ -194,11 +195,14 @@ void iota_gfx_task_user(void) {
   matrix_render_user(&matrix);
   matrix_update(&display, &matrix);
 }
+#endif//SSD1306OLED
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
+#ifdef SSD1306OLED
     set_keylog(keycode, record);
-    //set_timelog();
+#endif
+    // set_timelog();
   }
 
   switch (keycode) {
@@ -266,5 +270,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
-
-#endif
